@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+# NSQ aka The Bus
+  nsqlookupd:
+    image: nsqio/nsq
+    command: /nsqlookupd
+    ports:
+      - "127.0.0.1:4160:4160"
+      - "127.0.0.1:4161:4161"
+  nsqd:
+    image: nsqio/nsq
+    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --broadcast-address 127.0.0.1
+    ports:
+      - "127.0.0.1:4150:4150"
+      - "127.0.0.1:4151:4151"
+  nsqadmin:
+    image: nsqio/nsq
+    command: /nsqadmin --lookupd-http-address=nsqlookupd:4161
+    ports:
+      - "127.0.0.1:4171:4171"

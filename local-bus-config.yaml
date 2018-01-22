@@ -1,0 +1,22 @@
+defaultChannel:
+publisherName:
+
+nsqLookupHosts: ["127.0.0.1:4161"]
+
+nsqProducerHost: 127.0.0.1:4150
+nsqBackupProducerHost: 127.0.0.1:4150
+
+rpcTimeoutMillis: 30000
+
+anonymousMode: false
+
+useNsqjClient: true
+
+handlerThreadCount: 6
+msgTimeoutSeconds: 300
+maxInFlight: 1000
+
+#--------------
+
+rpcRequestHost: 127.0.0.1:4150
+rpcResponseHost: 127.0.0.1:4150
