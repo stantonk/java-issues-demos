@@ -15,6 +15,7 @@ sleep 10
 java \
     -Xms128m \
     -Xmx128m \
+    -XX:+PrintClassHistogram \
     -Dcom.sun.management.jmxremote \
     -Dcom.sun.management.jmxremote.ssl=false \
     -Dcom.sun.management.jmxremote.authenticate=false \
